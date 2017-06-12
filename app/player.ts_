@@ -1,0 +1,23 @@
+export class Player{
+    Position : Position = {x:0, y:0};
+    PreviousPosition : Position = {x:0, y:0};
+    PlayerShape : createjs.Shape;
+    Steps: number = 0;
+
+    constructor(x:number, y:number){
+        this.Position = {x:x, y:y};
+    }
+
+    public setPosition(x:number, y:number){
+        this.PreviousPosition.x = this.Position.x;
+        this.PreviousPosition.y = this.Position.y;
+        this.Position.x = x;
+        this.Position.y = y;
+    }
+
+}
+
+export class Position{
+    x: number;
+    y: number;
+}

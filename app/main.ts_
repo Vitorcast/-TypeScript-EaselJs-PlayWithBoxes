@@ -1,0 +1,65 @@
+enum WorldElements {
+    Wall,
+    EnemyBegin,
+    EnemyEnd,
+    Prize01,
+    Prize02    
+}
+
+class Main {
+
+    public Canvas: HTMLCanvasElement;
+    public Stage: createjs.Stage;
+
+    private World: Array<Array<string>> = [[]];
+
+    constructor(element: string) {
+        this.Stage = new createjs.Stage(document.getElementById(element));
+        this.Canvas = <HTMLCanvasElement>this.Stage.canvas;
+
+        this.WorldBegin();
+        this.WorldDraw();
+
+        createjs.Ticker.addEventListener("tick", this.Tick.bind(this));
+        createjs.Ticker.setFPS(60);
+    }
+
+    private WorldBegin(): void {
+        this.World.push(['W', 'F', 'F', 'F', 'F', 'F', 'F', 'F']);
+        this.World.push(['W', 'F', 'F', 'F', 'F', 'F', 'F', 'F']);
+        this.World.push(['W', 'F', 'F', 'F', 'F', 'F', 'F', 'F']);
+        this.World.push(['W', 'F', 'F', 'F', 'F', 'F', 'F', 'F']);
+        this.World.push(['W', 'F', 'F', 'F', 'F', 'F', 'F', 'F']);
+        this.World.push(['W', 'F', 'F', 'F', 'F', 'F', 'F', 'F']);
+        this.World.push(['W', 'F', 'F', 'F', 'F', 'F', 'F', 'F']);
+        this.World.push(['W', 'F', 'F', 'F', 'F', 'F', 'F', 'F']);
+    }
+
+    private Tick(): void {
+        this.Update();
+        this.Render();
+        this.Stage.update();
+    }
+
+    private Render(): void {
+
+    }
+
+    private Update(): void {
+
+    }
+
+    private WorldDraw() {
+        let x = 0;
+        let y = 0;
+        let rect;
+        let blockWidth = this.Canvas.width / this.World[0].length;
+        let blockHeight = this.Canvas.height / this.World.length;
+
+        this.World.forEach(row => {
+            console.log(row);
+        });
+    }
+}
+
+let game = new Main('canvas');

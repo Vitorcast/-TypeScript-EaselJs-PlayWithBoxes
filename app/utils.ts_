@@ -1,0 +1,44 @@
+export class Utils {
+    public static  generateRectange(strokeCollor:string, fillCollor:string, x:number, y:number, width:number, height:number): createjs.Shape{
+        let rectangle = new createjs.Shape();
+        rectangle.graphics.beginStroke(strokeCollor);
+        rectangle.graphics.beginFill(fillCollor);
+        rectangle.graphics.drawRect(0, 0, width, height);
+        rectangle.x = x
+        rectangle.y = y;
+        return rectangle;
+    }
+
+    public static generateCircle(strokeCollor:string, fillCollor:string, x:number, y:number, width:number, height:number, radius: number): createjs.Shape{
+        let circle = new createjs.Shape();
+        circle.graphics.beginStroke(strokeCollor);
+        circle.graphics.beginFill(fillCollor);
+        circle.graphics.drawCircle(width, height, radius);
+        circle.x = x;
+        circle.y = y;
+        return circle;
+    }
+
+    public static generateStar(strokeCollor:string, fillCollor:string, x:number, y:number, startX:number, startY:number, radius: number, sides:number, pointSize:number, angle:number): createjs.Shape{
+        let poly = new createjs.Shape();
+        poly.graphics.beginStroke(strokeCollor);
+        poly.graphics.beginFill(fillCollor);
+        poly.graphics.drawPolyStar(startX, startY, radius, sides, pointSize, angle);
+        poly.x = x;
+        poly.y = y;
+        return poly;
+    }
+
+    public static generateRoundedRectangle(strokeCollor:string, fillCollor:string, x:number, y:number, startX:number, startY:number, width:number, height:number, radius:number): createjs.Shape {
+        let roundedRectangle= new createjs.Shape();
+        roundedRectangle.graphics.beginStroke(strokeCollor);
+        roundedRectangle.graphics.beginFill(fillCollor);
+        roundedRectangle.graphics.drawRoundRect(startX, startY, width, height, radius);
+        roundedRectangle.x = roundedRectangle.y = x;
+        return roundedRectangle;
+    }
+
+    public static $(id:string){
+        return document.getElementById(id);
+    }
+}

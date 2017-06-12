@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body style="margin: 20px">
+
+    <div style="float:left">
+        <h3>Steps: <span id="steps"></span></h3>
+        <div style="float:left" id="inventory">
+            Inventory (I):
+            <ul style="list-style-type: none;padding-left:0">                
+                <li><span id='item1'></li>
+                <li><span id='item2'></li>       
+        </ul>
+    </div>
+
+    <div>
+        <div style="float:left; clear:both; width:200px; height:300px; overflow-y:scroll; overflow-x:hidden">
+            <h3>Travel Log:</h3>
+            <ul id='log' style="list-style-type: none;padding-left:0">            
+            </ul>
+        </div>
+    </div>
+</div>
+<div style="float:left">
+    <canvas style="float:left;" id="canvas" width="800" height="600" style="border: black solid 1px"></canvas>
+    <div style="float:left;visibility:hidden" id="gameOver" width="800" height="600" style="border: black solid 1px">
+        Try Again? <button onclick="window.location='index.html'">Yes</button>    
+    </div> 
+</div>
+
+
+
+    <!--<canvas id="canvas" width="800" height="600" style="border: black solid 1px"></canvas>-->
+    <script src="lib/easeljs-0.7.1.min.js"></script>
+    <script src="lib/tweenjs-0.5.1.min.js"></script>
+    <script src="dist/game.js"></script>
+</body>
+</script>
+
+</html>
